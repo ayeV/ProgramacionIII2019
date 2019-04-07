@@ -22,8 +22,5 @@ foreach ($list as $line)
   fputcsv($file,explode(',',$line));
   }
 
-
-
-
 fclose($file);
 ?>
