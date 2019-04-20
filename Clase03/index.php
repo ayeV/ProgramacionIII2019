@@ -1,7 +1,7 @@
 
 
 <?php
-    include_once "./Entidades/Persona.php";
+    include_once "./Persona.php";
 
     $archivo = fopen("Archivo.txt","a");
     fwrite($archivo,"Hola Probando 1 2 3".PHP_EOL);
