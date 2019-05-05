@@ -32,16 +32,17 @@
            case "modificarProveedor":
                 echo "<br/> MODIFICAR PROVEEDOR PUNTO 7"; 
                 $nombre = $_POST["nombre"];
+                $id = $_POST["id"];
                 $email = $_POST["email"];
                 $foto = $_FILES["foto"];                  
-                if($archivoProveedores->obtenerRegistro("-",$nombre,0,4) != null){
+                if($archivoProveedores->obtenerRegistro("-",$id,1,4) != null){
                     $fecha = date("dmy");
-                    $nombreBackUp = "./backUpFoto/$id.borrado.$fecha.png";
+                    $nombreBackUp = "./backUpFotos/$nombre.borrado.$fecha.png";
                     $destinoOrigen = "./ProveedoresImagen";
                     //Borra la imagen y hace un backup.
-                    $archivoProveedores->BackUp("-",$email,0,4,$destinoOrigen,3,$nombreBackUp);
+                    $archivoProveedores->BackUp("-",$id,1,4,$destinoOrigen,3,$nombreBackUp);
                     $provModificado = new Proveedor($nombre,$id,$email,$foto);
-                    $archivoProveedores->Modificar("-",$nombre,0,4,$provModificado);
+                    $archivoProveedores->Modificar("-",$id,1,4,$provModificado);
                 }
                 else{
                     echo "No existe el proveedor a modificar";
@@ -88,11 +89,11 @@
                                 </thead>
                                 <tbody>";
             foreach($arrayPedidos as $lista){
-                $arrayPedidos = explode("-",$lista);
+                $arrayPedido = explode("-",$lista);
                 $tabla = $tabla."<tr>
-                    <td>$arrayPedidos[0]</td>
-                    <td>$arrayPedidos[1]</td>
-                    <td>$arrayPedidos[2]</td>
+                    <td>$arrayPedido[0]</td>
+                    <td>$arrayPedido[1]</td>
+                    <td>$arrayPedido[2]</td>
                 </tr>";
                
                           
@@ -102,6 +103,43 @@
                         </table>";
             echo $tabla;
         break;
+
+        case "listarPedidoProveedor":
+        echo "<br/> listarPedidoProveedor punto 6";
+        $arrayPedidos = array();
+        if(isset($_GET["idProv"]) && !empty($_GET["idProv"])){
+            $arrayPedidos = $archivoPedidos->obtenerArrayRegistros("-",$_GET["idProv"],1,3);
+        }
+       /* else if (isset($_GET["apellido"]) && !empty($_GET["apellido"])){
+            $arrayInscripciones = $archivoInscripciones->obtenerArrayRegistros("-",$_GET["apellido"],2,5);
+        }*/
+        else{
+            $arrayPedidos = $archivoPedidos->fileToArray();
+        }
+
+        $tabla = "<table border='1'>
+                            <caption>Pedidos</caption>
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>id Prov</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>";
+        foreach($arrayPedidos as $lista){
+            $arrayPedido = explode("-",$lista);   
+            $tabla = $tabla."<tr>
+                            <td>$arrayPedido[0]</td>
+                            <td>$arrayPedido[1]</td>
+                            <td>$arrayPedido[2]</td>
+                        </tr>";
+        }
+
+        $tabla = $tabla."</tbody>
+                    </table>";
+        echo $tabla;
+     break;
 
            case "proveedores":
                 echo "<br/> Proveedores PUNTO 3 ";
@@ -119,11 +157,11 @@
                                     </thead>
                                     <tbody>";
                 foreach($arrayProveedores as $lista){
-                    $arrayProveedores = explode("-",$lista);
+                    $arrayProveedor = explode("-",$lista);
                     $tabla = $tabla."<tr>
-                        <td>$arrayProveedores[0]</td>
-                        <td>$arrayProveedores[1]</td>
-                        <td>$arrayProveedores[2]</td>
+                        <td>$arrayProveedor[0]</td>
+                        <td>$arrayProveedor[1]</td>
+                        <td>$arrayProveedor[2]</td>
                         <td><img style='width: 100px; height: 100px;' src='./ProveedoresImagen/$arrayProveedores[3]'></td>
                     </tr>";            
                 }
