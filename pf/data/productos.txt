@@ -1,0 +1,5 @@
+1;producto3;50;1.jpg;usuario2;
+2;producto3;50;2.jpg;usuario2;
+3;producto4;1000;3.jpg;usuario2;
+4;producto5;1000;4.jpg;usuario1;
+5;producto3;50;5.jpg;usuario2;
