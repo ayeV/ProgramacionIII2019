@@ -3,7 +3,7 @@ include_once("producto.php");
 
 class Archivo
 {
-    
+
     private $path;
     private static $ruta_archivo_productos = "./productos.txt";
     private static $ruta_imagenes = ".\\ProductosImagen\\";
@@ -56,25 +56,26 @@ class Archivo
         rename("$destinoOrigen/$arrayRegistro[$indiceABackupear]", $destinoBackUp);
     }
 
-    public static function generar_nombre_imagen($nombre, $id){
-       
+    public static function generar_nombre_imagen($nombre, $id)
+    {
+
         $array_nombre_archivo = explode(".", $nombre);
-        $nombre_archivo = ($id).".";
-        $nombre_archivo .= $array_nombre_archivo[sizeof($array_nombre_archivo)-1];
+        $nombre_archivo = ($id) . ".";
+        $nombre_archivo .= $array_nombre_archivo[sizeof($array_nombre_archivo) - 1];
         return $nombre_archivo;
     }
 
-    public static function cargar_imagen($origen, $destino){
-        
-        if(file_exists(self::$ruta_imagenes.$destino)){
-          
-            copy(self::$ruta_imagenes.$destino, self::$ruta_imagenes_backup.(date('Y-m-d').".".$destino));
-        }
-        move_uploaded_file($origen, self::$ruta_imagenes.$destino);
+    public static function cargar_imagen($origen, $destino)
+    {
 
+        if (file_exists(self::$ruta_imagenes . $destino)) {
+
+            copy(self::$ruta_imagenes . $destino, self::$ruta_imagenes_backup . (date('Y-m-d') . "." . $destino));
+        }
+        move_uploaded_file($origen, self::$ruta_imagenes . $destino);
     }
 
-   
+
 
 
 
@@ -115,7 +116,6 @@ class Archivo
             if (Count($arrayRegistro) == $cantidadCampos) {
                 if (trim($identificador) == trim($arrayRegistro[$indiceIdentificador])) {
                     return $registro;
-                    
                 }
             }
         }
@@ -148,11 +148,11 @@ class Archivo
     {
         $arrayRetorno = array();
         $array = $this->fileToArray();
-      
+
         foreach ($array as  $i => $registro) {
             $arrayRegistro = explode($separador, $registro);
             if (Count($arrayRegistro) == $cantidadCampos) {
-                if (trim($identificador1) == trim($arrayRegistro[$indiceIdentificador1]) && $identificador2 == $arrayRegistro[$indiceIdentificador2]) {
+                if (trim($identificador1) == strtolower(trim($arrayRegistro[$indiceIdentificador1])) && trim($identificador2) == strtolower(trim($arrayRegistro[$indiceIdentificador2]))) {
                     $arrayRetorno[] = $registro;
                 }
             }
@@ -160,19 +160,20 @@ class Archivo
         return $arrayRetorno;
     }
 
-    public static function obtener_productos($criterio, $valor){
+    public static function obtener_productos($criterio, $valor)
+    {
         $productos = array();
         $archivo = fopen(self::$ruta_archivo_productos, "r");
-        while(!feof($archivo)){
+        while (!feof($archivo)) {
             $producto = trim(fgets($archivo));
-            if($producto != ""){
+            if ($producto != "") {
                 $producto = explode(";", $producto);
                 $producto_instancia = new Producto($producto[0], $producto[1], $producto[2], $producto[3], $producto[4]);
-                if(!is_null($criterio)){
-                    if(strcasecmp($producto_instancia->$criterio, $valor)==0){
+                if (!is_null($criterio)) {
+                    if (strcasecmp($producto_instancia->$criterio, $valor) == 0) {
                         array_push($productos, $producto_instancia);
                     }
-                }else{
+                } else {
                     array_push($productos, $producto_instancia);
                 }
             }
@@ -180,7 +181,4 @@ class Archivo
         fclose($archivo);
         return $productos;
     }
-
-    
-   
 }

@@ -126,7 +126,7 @@ if (isset($_POST["caso"]) && !empty($_POST["caso"])) {
             echo $tabla;
             break;
 
-        case "listarProductos1":
+       /* case "listarProductos1":
             
             $criterio = $_GET["criterio"];
             $valor = $_GET["valor"];
@@ -157,7 +157,30 @@ if (isset($_POST["caso"]) && !empty($_POST["caso"])) {
 
 
 
-            break;
+            break;*/
+            case "listarProductos1":
+            $arrayProductos = array();
+            if(isset($_GET["nombre"]) && !empty($_GET["nombre"]) && isset($_GET["precio"]) && !empty($_GET["precio"])){
+             $arrayProductos = $archivoProductos->obtenerArrayRegistros1("-", strtolower($_GET["nombre"]), $_GET["precio"], 1, 2, 5);
+
+            }
+            else if (isset($_GET["nombreUser"]) && !empty($_GET["nombreUser"]) && isset($_GET["precio"]) && !empty($_GET["precio"])){
+                $arrayProductos = $archivoProductos->obtenerArrayRegistros1("-", strtolower($_GET["nombreUser"]), $_GET["precio"], 3, 2, 5);
+            }
+            else{
+                $arrayProductos = $archivoProductos->fileToArray();
+            }
+            if (Count($arrayProductos) != 0) {
+                echo "<br/>Coincidencias:";
+                foreach ($arrayProductos as $registro) {
+                    echo "<br/>" . $registro;
+                }
+            }
+            else
+            {
+                echo("No se han encontrado productos");
+            }
+        break;
 
         default:
             echo "Debe establecer un caso válido.";
