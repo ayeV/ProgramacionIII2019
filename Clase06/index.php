@@ -1,4 +1,5 @@
 <?php
+namespace Firebase\JWT;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 require 'vendor/autoload.php';
@@ -70,6 +71,59 @@ $app->group('/cd', function () {
        
   });
 
-// Run application
-$app->run();
+  $app->post("/jwt/crearToken[/]",function(Request $request, Response $response){
+    $datos = $request->getParsedBody();
+    $ahora = time();
+     $payload = array(
+        'iat' => $ahora,
+        'exp' => $ahora + 30,
+        'data' => $datos,
+        'APP' => "API REST 2019"
+    );
+    
+    $token = JWT::encode($payload, "miClaveSecreta");
+
+
+ 
+    return $response->withJson($token,200); 
+  });
+
+
+  $app->post("/jwt/Login[/]",function(Request $request, Response $response){
+    $datos = $request->getParsedBody();
+    $ahora = time();
+
+    $payload = array(
+        'usuario' => $datos["usuario"],
+       
+    );
+    $token = JWT::encode($payload, "miClaveSecreta1");
+    return $response->withJson($token,200); 
+  });
+
+$app->post("/jwt/verificarToken[/]",function(Request $request, Response $response){
+$array = $request->getHeaderLine('token');
+if(empty($array) || $array === 'null')
+{
+    throw new Exception("Token vacio");
+}
+
+try{
+
+    $decodificado = JWT::decode( $array,"miClaveSecreta1",['HS256']);
+
+}
+catch(Exception $e){
+    throw new Exception("Token no valido".$e.getMessage());
+
+}
+return "Token ok";
+
+
+});
+
+
+
+
+  $app->run();
 ?>
