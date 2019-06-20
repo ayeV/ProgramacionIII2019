@@ -20,7 +20,19 @@
                 return $next($request,$response);
             }
             else{
-                $respuesta = array("Estado" => "ERROR", "Mensaje" => "No tienes permiso para realizar esta accion (Solo categoria admin).");
+                $respuesta = array("Estado" => "ERROR", "Mensaje" => "Hola.");
+                $newResponse = $response->withJson($respuesta,200);
+                return $newResponse;
+            }
+        }
+
+        public static function ValidarUsuario($request,$response,$next){
+            $payload = $request->getAttribute("payload")["Payload"];
+            if($payload->perfil == "Usuario"){
+                return $next($request,$response);
+            }
+            else{
+                $respuesta = array("Estado" => "ERROR", "Mensaje" => "Hola.");
                 $newResponse = $response->withJson($respuesta,200);
                 return $newResponse;
             }

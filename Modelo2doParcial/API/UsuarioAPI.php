@@ -44,20 +44,13 @@ class UsuarioAPI extends Usuario
         return $newResponse;
     }   
   
-    public function ListarEmpleados($request, $response, $args)
+    public function ListarUsuarios($request, $response, $args)
     {
-        $respuesta = Empleado::Listar();
+        $respuesta = Usuario::Listar();
         $newResponse = $response->withJson($respuesta, 200);
         return $newResponse;
     }
-    ///Da de baja un empleado.
-    public function BajaEmpleado($request, $response, $args)
-    {
-        $id = $args["id"];
-        $respuesta = Empleado::Baja($id);
-        $newResponse = $response->withJson($respuesta, 200);
-        return $newResponse;
-    }
+  
  
 }
     ?>

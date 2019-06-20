@@ -3,7 +3,7 @@ require './vendor/autoload.php';
 use \Firebase\JWT\JWT;
 class Token{
     private static $key = "example_key";
-  
+    private static $tipoEncriptacion = ['HS256'];
     private static $token = array(
         "iat" => "", //Cuándo fue ingresado
         "nbf" => "", //Antes de esto no va a funcionar (Desde)
@@ -47,6 +47,15 @@ class Token{
             $decoded = array("Estado" => "ERROR", "Mensaje" => "$mensaje");
         }        
         return $decoded;
+    }
+
+    public static function ObtenerPayLoad($token)
+    {
+        return JWT::decode(
+            $token,
+            self::$key,
+            self::$tipoEncriptacion
+        );
     }
 }
 ?>

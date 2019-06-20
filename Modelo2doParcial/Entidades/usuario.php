@@ -2,7 +2,7 @@
 include_once("DB/AccesoDatos.php");
 class Usuario
 {
-    public $id;
+    public $id_user;
     public $nombre;
     public $clave;
     public $sexo;
@@ -60,6 +60,25 @@ class Usuario
         
         return $resultado;
     }
-}
 
-?>
+    public static function Listar()
+    {
+        try {
+            $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+
+            $consulta = $objetoAccesoDato->RetornarConsulta("SELECT id_user, nombre, sexo, perfil from usuarios");
+
+            $consulta->execute();
+
+            $respuesta = $consulta->fetchAll(PDO::FETCH_CLASS, "Usuario");
+        } catch (Exception $e) {
+            $mensaje = $e->getMessage();
+            $respuesta = array("Estado" => "ERROR", "Mensaje" => "$mensaje");
+        }
+        finally {
+            return $respuesta;
+        }
+    }
+
+
+}
