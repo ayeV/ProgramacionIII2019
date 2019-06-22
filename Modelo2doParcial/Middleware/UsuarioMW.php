@@ -2,8 +2,8 @@
     class UsuarioMW{
        
         public static function ValidarToken($request,$response,$next){
-            $token = $request->getHeader("token");
-            $validacionToken = Token::DecodificarToken($token[0]);
+            $token = $request->getHeaderLine("token");
+            $validacionToken = Token::DecodificarToken($token);
             if($validacionToken["Estado"] == "OK"){
                 $request = $request->withAttribute("payload", $validacionToken);
                 return $next($request,$response);

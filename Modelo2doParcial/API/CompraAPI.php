@@ -48,7 +48,7 @@ class CompraAPI extends Compra
         $precio = $parametros["precio"];
         $fecha = $parametros["fecha"];
         $fecha = date('Y-m-d H:i:s');
-        $token = $parametroToken["token"];
+        $token = $request->getHeaderLine('token');
 
         $respuesta = Compra::Insertar($articulo, $precio, $fecha, null, $token);
         $newResponse = $response->withJson($respuesta, 200);
@@ -73,12 +73,8 @@ class CompraAPI extends Compra
 
     public function Listar1($request, $response, $args)
     {    
-       
-        $parametroToken = $request->getHeader("token");
-        $token = $parametroToken["token"];
-
+        $token = $request->getHeaderLine('token');
         $todos = Compra::Listar($token);
-
 
         $newResponse = $response->withJson($todos, 200);
         return $newResponse;

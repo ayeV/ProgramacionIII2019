@@ -41,10 +41,11 @@ class Compra
             $id_user = $payload->id;
             
             if ($perfil == "Usuario") {
-                $consulta = $objetoAccesoDato->RetornarConsulta("SELECT c.articulo, c.precio, c.foto, u.nombre 
-                                                            FROM compras c INNER JOIN usuarios u on c.id_user = u.id_user;");
+                $consulta = $objetoAccesoDato->RetornarConsulta("SELECT c.articulo, c.precio, c.foto,c.id_compra,c.id_user,c.fecha
+                                                            FROM compras c WHERE c.id_user = :id_user;");
 
                 $consulta->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+
             } else {
                 $consulta = $objetoAccesoDato->RetornarConsulta("SELECT * from compras;");
             }
