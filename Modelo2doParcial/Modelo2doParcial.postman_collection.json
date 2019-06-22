@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "f287c62d-76a9-41dc-aa3b-b3f15b606536",
+		"name": "Modelo2doParcial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost/Modelo2doParcial/usuarios/usuario",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjEwNTEyNDgsIm5iZiI6MTU2MTA1MTI0OCwiaWQiOjIsIm5vbWJyZSI6InVzZXIwMSIsInBlcmZpbCI6IlVzdWFyaW8ifQ.BsU3yhZl-xbS0QwmAN3FUge6uGKiXpFR-LGGwLMYRsU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/Modelo2doParcial/usuarios/usuario",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Modelo2doParcial",
+						"usuarios",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/Modelo2doParcial/usuarios/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "user01",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "user01",
+							"type": "text"
+						},
+						{
+							"key": "sexo",
+							"value": "femenino",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/Modelo2doParcial/usuarios/login",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Modelo2doParcial",
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/Modelo2doParcial/usuarios/usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjEwNTAyMjIsIm5iZiI6MTU2MTA1MDIyMiwiaWQiOjEsIm5vbWJyZSI6ImFkbWluIiwicGVyZmlsIjoiYWRtaW4ifQ.8hQp48NkF1iAPIGbxaSeCTeQkNvbHO9bWlLYarDgNso",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "user03",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "user03",
+							"type": "text"
+						},
+						{
+							"key": "sexo",
+							"value": "masculino",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/Modelo2doParcial/usuarios/usuario",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Modelo2doParcial",
+						"usuarios",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/Modelo2doParcial/compras/Compra",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjEwNTEyNDgsIm5iZiI6MTU2MTA1MTI0OCwiaWQiOjIsIm5vbWJyZSI6InVzZXIwMSIsInBlcmZpbCI6IlVzdWFyaW8ifQ.BsU3yhZl-xbS0QwmAN3FUge6uGKiXpFR-LGGwLMYRsU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "articulo",
+							"value": "sillon",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "1500",
+							"type": "text"
+						},
+						{
+							"key": "fecha",
+							"value": "15/06/2019",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"value": null,
+							"type": "file",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjEwNTEyNDgsIm5iZiI6MTU2MTA1MTI0OCwiaWQiOjIsIm5vbWJyZSI6InVzZXIwMSIsInBlcmZpbCI6IlVzdWFyaW8ifQ.BsU3yhZl-xbS0QwmAN3FUge6uGKiXpFR-LGGwLMYRsU",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/Modelo2doParcial/compras/Compra",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Modelo2doParcial",
+						"compras",
+						"Compra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/Modelo2doParcial/compras/Compra",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjEyMzAyODYsIm5iZiI6MTU2MTIzMDI4NiwiaWQiOjIsIm5vbWJyZSI6InVzZXIwMSIsInBlcmZpbCI6IlVzdWFyaW8ifQ.PcDc2kjq0Gvrq-xbsbFUfW-R7VpwYKubzfgmNWMynSY",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjEwNTEyNDgsIm5iZiI6MTU2MTA1MTI0OCwiaWQiOjIsIm5vbWJyZSI6InVzZXIwMSIsInBlcmZpbCI6IlVzdWFyaW8ifQ.BsU3yhZl-xbS0QwmAN3FUge6uGKiXpFR-LGGwLMYRsU",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/Modelo2doParcial/compras/Compra",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Modelo2doParcial",
+						"compras",
+						"Compra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/Modelo2doParcial/compras/Compra",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjExNTk1MjIsIm5iZiI6MTU2MTE1OTUyMiwiaWQiOjMsIm5vbWJyZSI6InVzZXIwMiIsInBlcmZpbCI6IlVzdWFyaW8ifQ.pHRTLla0PlrGUKwk44c8UweUgDIUeNbiA4_W3lSRujk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "articulo",
+							"value": "alfombra",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "250",
+							"type": "text"
+						},
+						{
+							"key": "fecha",
+							"value": "22/06/2019",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"value": null,
+							"type": "file"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/Modelo2doParcial/compras/Compra",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Modelo2doParcial",
+						"compras",
+						"Compra"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
