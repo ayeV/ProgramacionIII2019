@@ -19,7 +19,7 @@ $app = new \Slim\App([
 ]);
 
 $app->group('/usuarios', function () {
-    $this->post('/login[/]', \UsuarioAPI::class . ':LoginUsuario')->add(\HistorialMiddleware::class . ':GenerarHistorial');
+    $this->post('/login[/]', \UsuarioAPI::class . ':LoginUsuario');
 
 
     $this->post('/usuario[/]', \UsuarioAPI::class . ':RegistrarUsuario')->add(\UsuarioMW::class . ':ValidarAdmin')
@@ -34,18 +34,10 @@ $app->group('/usuarios', function () {
 
 
 $app->group('/compras', function () {
-    $this->post('/Compra[/]', \CompraAPI::class . ':RegistrarCompra')->add(\UsuarioMW::class . ':ValidarToken')->add(\HistorialMiddleware::class . ':GenerarHistorial');
-
-
-  
+    $this->post('/Compra[/]', \CompraAPI::class . ':RegistrarCompraFoto')->add(\UsuarioMW::class . ':ValidarToken')->add(\HistorialMiddleware::class . ':GenerarHistorial');
 
     $this->get('/Compra[/]', \CompraAPI::class . ':Listar1')->add(\UsuarioMW::class . ':ValidarToken')->add(\HistorialMiddleware::class . ':GenerarHistorial');
-
-
-
-   
-    
-       
+  
 });
 
 

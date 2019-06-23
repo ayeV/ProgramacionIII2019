@@ -10,28 +10,13 @@ class Compra
     public $id_user;
     public $id_compra;
     public $fecha;
+    
 
 
-    public static function ListarComprasPorUsuario($id_user)
+    public function __toString()
     {
-        try {
-            $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-
-            $consulta = $objetoAccesoDato->RetornarConsulta("SELECT c.articulo, c.precio, c.foto, u.nombre 
-                                                            FROM compras c INNER JOIN usuarios u on c.id_user = u.id_user;");
-
-            $consulta->execute();
-            $consulta->bindValue(':id_user', $id_user, PDO::PARAM_INT);
-
-            $respuesta = $consulta->fetchAll(PDO::FETCH_CLASS, "Compra");
-        } catch (Exception $e) {
-            $mensaje = $e->getMessage();
-            $respuesta = array("Estado" => "ERROR", "Mensaje" => "$mensaje");
-        } finally {
-            return $respuesta;
-        }
+        return $this->id_compra." - ".$this->articulo." - ".$this->precio." - ".$this->foto."-".$this->fecha;
     }
-
     public static function Listar($token)
     {
         try {
@@ -63,22 +48,6 @@ class Compra
     }
 
 
-    public static function ListarCompras()
-    {
-        try {
-            $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-
-            $consulta = $objetoAccesoDato->RetornarConsulta("SELECT * from compras;");
-
-            $consulta->execute();
-            $respuesta = $consulta->fetchAll(PDO::FETCH_CLASS, "Compra");
-        } catch (Exception $e) {
-            $mensaje = $e->getMessage();
-            $respuesta = array("Estado" => "ERROR", "Mensaje" => "$mensaje");
-        } finally {
-            return $respuesta;
-        }
-    }
 
 
 

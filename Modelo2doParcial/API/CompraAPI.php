@@ -8,14 +8,13 @@ class CompraAPI extends Compra
     public function RegistrarCompraFoto($request, $response, $args)
     {
         $parametros = $request->getParsedBody();
-        $parametroToken = $request->getHeader("token");
 
         $files = $request->getUploadedFiles();
         $articulo = $parametros["articulo"];
         $precio = $parametros["precio"];
         $fecha = $parametros["fecha"];
         $fecha = date('Y-m-d H:i:s');
-        $token = $parametroToken["token"];
+        $token = $request->getHeaderLine('token');
 
         $foto = $files["foto"];
         //Consigo la extensión de la foto.  
@@ -29,7 +28,7 @@ class CompraAPI extends Compra
             Foto::GuardarFoto($foto, $rutaFoto);
 
             $respuesta = "Insertado Correctamente.";
-            Compra::Insertar($articulo, $precio, $fecha, $foto, $token);
+            Compra::Insertar($articulo, $precio, $fecha, $nombreFoto, $token);
             $newResponse = $response->withJson($respuesta, 200);
             return $newResponse;
         } else {
@@ -43,7 +42,6 @@ class CompraAPI extends Compra
     {
         $parametros = $request->getParsedBody();
 
-        $parametroToken = $request->getHeader("token");
         $articulo = $parametros["articulo"];
         $precio = $parametros["precio"];
         $fecha = $parametros["fecha"];
@@ -55,21 +53,6 @@ class CompraAPI extends Compra
         return $newResponse;
     }
 
-    /*  public function ListarCompras($request, $response, $args)
-    {
-        $respuesta = Compra::ListarCompras();
-        $newResponse = $response->withJson($respuesta, 200);
-        return $newResponse;
-    }*/
-
-    /*  public function ListarComprasPorUsuario($request, $response, $args){
-        $payload = $request->getAttribute("payload")["Payload"];
-        
-        $id_user = $payload->id;
-        $todos = Compra::ListarComprasPorUsuario($id_user);
-        $newResponse = $response->withJson($todos, 200);
-        return $newResponse;
-    }*/
 
     public function Listar1($request, $response, $args)
     {    
