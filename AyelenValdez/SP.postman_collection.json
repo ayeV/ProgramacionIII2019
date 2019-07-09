@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "8c072bcd-6fa3-4f80-8a1d-1dbe201bb9bf",
+		"name": "SP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost/AyelenValdez/usuarios/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost/AyelenValdez/usuarios/login",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"AyelenValdez",
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/AyelenValdez/materias/materia",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjE4NDAwNzEsIm5iZiI6MTU2MTg0MDA3MSwibm9tYnJlIjoidXNlcjAxIiwidGlwbyI6ImFkbWluIiwibGVnYWpvIjoxfQ.IKN0d84pjD_hIVyjOyeyWLIJghltdYOl9WrVDAE770g",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "fisica",
+							"type": "text"
+						},
+						{
+							"key": "cupos",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "cuatrimestre",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/AyelenValdez/materias/materia",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"AyelenValdez",
+						"materias",
+						"materia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/AyelenValdez/usuarios/usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "maria",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "maria",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "alumno",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/AyelenValdez/usuarios/usuario",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"AyelenValdez",
+						"usuarios",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/AyelenValdez/materias/usuario/7",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjE4NDA0MTIsIm5iZiI6MTU2MTg0MDQxMiwibm9tYnJlIjoibWFyaWEiLCJ0aXBvIjoiYWx1bW5vIiwibGVnYWpvIjo3fQ.Z7m5oskgJIZFKTRJNfXu5A6YgN0T62Hzb20RxFetA4w",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "mariaemail",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "/C:/xampp/htdocs/Modelo2doParcial/API/mesa-madera-pino-70.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/AyelenValdez/materias/usuario/7",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"AyelenValdez",
+						"materias",
+						"usuario",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/AyelenValdez/materias/usuario/8",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjE4NDExMTYsIm5iZiI6MTU2MTg0MTExNiwibm9tYnJlIjoianVhbiIsInRpcG8iOiJwcm9mZXNvciIsImxlZ2FqbyI6OH0.EWUGq1bmJh8YHlY6XI0PgfS3XYiL2-_y-BxC3fwJpHo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_materia[0]",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "profepepe@64.com",
+							"type": "text"
+						},
+						{
+							"key": "id_materia[1]",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/AyelenValdez/materias/usuario/2",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"AyelenValdez",
+						"materias",
+						"usuario",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/AyelenValdez/materias/inscripcion/3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjI0NDkyOTksIm5iZiI6MTU2MjQ0OTI5OSwibm9tYnJlIjoibWFyaWEiLCJ0aXBvIjoiYWx1bW5vIiwibGVnYWpvIjo3fQ.7ZEYsEk_I2qbnDtrkgHM4r7kRSdIgo6_olLrtLHCSe4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/AyelenValdez/materias/inscripcion/5",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"AyelenValdez",
+						"materias",
+						"inscripcion",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/AyelenValdez/materias/usuario/3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjI0Mzk5ODYsIm5iZiI6MTU2MjQzOTk4Niwibm9tYnJlIjoidXNlcjAxIiwidGlwbyI6ImFkbWluIiwibGVnYWpvIjoxfQ.q6AtN2R2bvCIw4boKoNh3MUkJwMmfTF2jD8X_jFZW-Y",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "foto",
+							"value": null,
+							"type": "file"
+						},
+						{
+							"key": "email",
+							"value": "zzzzzzzzz",
+							"type": "text"
+						},
+						{
+							"key": "id_materia[0]",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "emememe",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/AyelenValdez/materias/usuario/3",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"AyelenValdez",
+						"materias",
+						"usuario",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/AyelenValdez/materias/listar",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjI0NTM1OTcsIm5iZiI6MTU2MjQ1MzU5Nywibm9tYnJlIjoidXNlcjAyIiwidGlwbyI6InByb2Zlc29yIiwibGVnYWpvIjoyfQ.Ymax30KSVvrBCNu-bEmfzDN8jf-g80uMLe0K3AysTyc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/AyelenValdez/materias/listar",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"AyelenValdez",
+						"materias",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/AyelenValdez/materias/listar",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjI0NTM4MTQsIm5iZiI6MTU2MjQ1MzgxNCwibm9tYnJlIjoibWFyaWEiLCJ0aXBvIjoiYWx1bW5vIiwibGVnYWpvIjo3fQ.lwkoBDcLoCpinBsRpp0jeM24KEyyZlY2fO8SSFHeUX8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/AyelenValdez/materias/listar",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"AyelenValdez",
+						"materias",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/AyelenValdez/materias/listar/5",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjI0NTM4MTQsIm5iZiI6MTU2MjQ1MzgxNCwibm9tYnJlIjoibWFyaWEiLCJ0aXBvIjoiYWx1bW5vIiwibGVnYWpvIjo3fQ.lwkoBDcLoCpinBsRpp0jeM24KEyyZlY2fO8SSFHeUX8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/AyelenValdez/materias/listar/5",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"AyelenValdez",
+						"materias",
+						"listar",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
