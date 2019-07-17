@@ -1,0 +1,229 @@
+{
+	"id": "ce10ca93-9754-013f-be73-93856f7912d0",
+	"name": "sp",
+	"description": "",
+	"order": [
+		"b3c87203-6e2f-d3c8-58f5-c506aefdb38a",
+		"69bb8b62-8271-dcaa-3a74-a374ab586af5",
+		"794ffe1f-f1cb-bda1-a883-08a4a218fb4c",
+		"04881e04-a8c6-edd5-a4a1-72453b67ba67",
+		"3fa75332-92d9-96b2-639d-3d9c14d6b06c"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1561508406022,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "04881e04-a8c6-edd5-a4a1-72453b67ba67",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:80/sp/login",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "ce10ca93-9754-013f-be73-93856f7912d0",
+			"data": [
+				{
+					"key": "legajo",
+					"value": "6",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "clave",
+					"value": "1234",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Login",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1561508988390,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "3fa75332-92d9-96b2-639d-3d9c14d6b06c",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MzAxODdmYjQyODJlMGU3ZTg1NzVkZGEwZDc0N2Y0NjM4NDk2OWE4Iiwibm9tYnJlIjoiYWx1bW5vMSIsInRpcG8iOiJhbHVtbm8iLCJsZWdham8iOjR9.41xhab7t55-zApktnEou-Ixq0TD09n_vpoJ5O1LctNQ\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MzAxODdmYjQyODJlMGU3ZTg1NzVkZGEwZDc0N2Y0NjM4NDk2OWE4Iiwibm9tYnJlIjoiYWx1bW5vMSIsInRpcG8iOiJhbHVtbm8iLCJsZWdham8iOjR9.41xhab7t55-zApktnEou-Ixq0TD09n_vpoJ5O1LctNQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:80/sp/usuario/6",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "ce10ca93-9754-013f-be73-93856f7912d0",
+			"data": [
+				{
+					"key": "email",
+					"value": "asd",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "foto",
+					"value": "",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Modificar alumno",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1561509240260,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "69bb8b62-8271-dcaa-3a74-a374ab586af5",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MzAxODdmYjQyODJlMGU3ZTg1NzVkZGEwZDc0N2Y0NjM4NDk2OWE4Iiwibm9tYnJlIjoiYWRtaW4xIiwidGlwbyI6ImFkbWluIn0.yNd6XmksgYc_G2st6qJKPaANGxm2I_VV3y_w99bY40g\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MzAxODdmYjQyODJlMGU3ZTg1NzVkZGEwZDc0N2Y0NjM4NDk2OWE4Iiwibm9tYnJlIjoiYWRtaW4xIiwidGlwbyI6ImFkbWluIn0.yNd6XmksgYc_G2st6qJKPaANGxm2I_VV3y_w99bY40g",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:80/sp/usuario/9",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "ce10ca93-9754-013f-be73-93856f7912d0",
+			"data": [
+				{
+					"key": "email",
+					"value": "asd@mail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "materias[0]",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "materias[1]",
+					"value": "2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Modificar profesor admin",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1561508553598,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "794ffe1f-f1cb-bda1-a883-08a4a218fb4c",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MzAxODdmYjQyODJlMGU3ZTg1NzVkZGEwZDc0N2Y0NjM4NDk2OWE4Iiwibm9tYnJlIjoibWFyaW8iLCJ0aXBvIjoicHJvZmVzb3IiLCJsZWdham8iOjEwfQ.xPtwPmD2xpd2kgwX8mGVfrX8eJm5RzlrkRRflmmUXiM\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MzAxODdmYjQyODJlMGU3ZTg1NzVkZGEwZDc0N2Y0NjM4NDk2OWE4Iiwibm9tYnJlIjoibWFyaW8iLCJ0aXBvIjoicHJvZmVzb3IiLCJsZWdham8iOjEwfQ.xPtwPmD2xpd2kgwX8mGVfrX8eJm5RzlrkRRflmmUXiM",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:80/sp/usuario/10",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "ce10ca93-9754-013f-be73-93856f7912d0",
+			"data": [
+				{
+					"key": "email",
+					"value": "email@asd.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "materias[0]",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Modificar profesor profesor",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1561508744013,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "b3c87203-6e2f-d3c8-58f5-c506aefdb38a",
+			"headers": "token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MzAxODdmYjQyODJlMGU3ZTg1NzVkZGEwZDc0N2Y0NjM4NDk2OWE4Iiwibm9tYnJlIjoiYWx1bW5vMSIsInRpcG8iOiJhbHVtbm8iLCJsZWdham8iOjN9.0FKi3iqO24agWicBvYrJ6FZRDlpMG7Fia9opOvIP_fY\n",
+			"headerData": [
+				{
+					"key": "token",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MzAxODdmYjQyODJlMGU3ZTg1NzVkZGEwZDc0N2Y0NjM4NDk2OWE4Iiwibm9tYnJlIjoiYWx1bW5vMSIsInRpcG8iOiJhbHVtbm8iLCJsZWdham8iOjN9.0FKi3iqO24agWicBvYrJ6FZRDlpMG7Fia9opOvIP_fY",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:80/sp/inscripcion/2",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "ce10ca93-9754-013f-be73-93856f7912d0",
+			"data": null,
+			"dataMode": "params",
+			"name": "Inscripcion",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1561508407460,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
